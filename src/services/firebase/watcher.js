@@ -5,6 +5,7 @@ export function watchUserChanges(callback) {
     const unsub = auth.onAuthStateChanged((user) => {
         if (user && !user.isAnonymous) {
             console.log('logged in');
+            // console.log("este es user en watcher", user)
             callback( {
                 id: user.uid,
                 email: user.email,
@@ -29,7 +30,7 @@ export function watchMaintenance(callback) {
             });
         })
         callback(maintenances);
-        console.log("current maintenances", maintenances);
+        // console.log("current maintenances", maintenances);
     })
     return unsub;
 }

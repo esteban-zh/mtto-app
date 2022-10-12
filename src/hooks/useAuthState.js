@@ -9,7 +9,7 @@ const initialAuth = {
 
 const useAuthState = () => {
     const [stateAuth, setStateAuth] = useState(initialAuth);
-
+    
     useEffect(() => {
       watchUserChanges((user) => {
         if (user) {
