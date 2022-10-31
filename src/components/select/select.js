@@ -7,7 +7,7 @@ import styles from "./style.module.scss";
 const Select = (props) => {
   const { options, value, onChange, onBlur, placeholder } = props;
   const [isOpen, setIsOpen] = useState(false);
-  console.log("isopne", isOpen)
+//   console.log("isopne", isOpen)
   return (
     <div className={styles.option}>
       <TextField

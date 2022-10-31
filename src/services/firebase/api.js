@@ -10,6 +10,6 @@ export async function deleteMaintenance(id) {
 }
 
 export async function updateMaintenance(id, data) {
-    return await updateDoc(doc(db, "maintenances", id), data);
+    return await updateDoc(doc(db, "maintenance", id), data);
 }
-
+        

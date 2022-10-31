@@ -8,11 +8,12 @@ import styles from "./style.module.scss";
 
 const initialStateMtto = {
     maintenanceId: null,
+    isOpen: false,
   }
     
   const Dashboard = () => {
   const [stateMtto, setStateMtto] = useState(initialStateMtto);
-  const { maintenanceId } = stateMtto;
+  const { maintenanceId, isOpen } = stateMtto;
   const stateMaintenance = useContext(MaintenanceContext);
   const {maintenances} = stateMaintenance;
 
@@ -21,6 +22,12 @@ const initialStateMtto = {
   return (
     <Layout>
       <div className={styles.container}>
+        <div
+          className={styles.buttonFloat}
+          onClick={() => setStateMtto({ maintenanceId: null, isOpen: true })}
+        >
+          +
+        </div>
         <table className={styles.table} cellSpacing="0">
           <thead>
             <tr className={styles.tableHeader}>
@@ -37,9 +44,12 @@ const initialStateMtto = {
                 <tr
                   key={row.id}
                   className={styles.tableRow}
-                  onClick={()=>setStateMtto({
-                    maintenanceId: row.id
-                  })}
+                  onClick={() =>
+                    setStateMtto({
+                      maintenanceId: row.id,
+                      isOpen: true,
+                    })
+                  }
                 >
                   <td>{row.id}</td>
                   <td>{moment(row.date).format("DD MMM YYYY hh:mm a")}</td>
@@ -52,9 +62,12 @@ const initialStateMtto = {
           </tbody>
         </table>
       </div>
-      {mtto && <Maintenance 
-      mtto={mtto}
-      onClose={() => setStateMtto({maintenanceId: null})} />}
+      {isOpen && (
+        <Maintenance
+          mtto={mtto}
+          onClose={() => setStateMtto({ maintenanceId: null, isOpen:false })}
+        />
+      )}
     </Layout>
   );
 };

@@ -20,7 +20,7 @@ const uiConfig = {
   signInOptions: [
     firebase.auth.EmailAuthProvider.PROVIDER_ID,
   ],
-  signInSuccessUrl: '/',
+  signInSuccessUrl: '/dashboard',
 };
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);

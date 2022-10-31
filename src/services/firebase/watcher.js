@@ -4,7 +4,7 @@ import { collection, query, onSnapshot } from "firebase/firestore";
 export function watchUserChanges(callback) {
     const unsub = auth.onAuthStateChanged((user) => {
         if (user && !user.isAnonymous) {
-            console.log('logged in');
+            // console.log('logged in');
             // console.log("este es user en watcher", user)
             callback( {
                 id: user.uid,
@@ -12,7 +12,7 @@ export function watchUserChanges(callback) {
                 displayName: user.displayName,
             });
         } else {
-            console.log("not logged in");
+            // console.log("not logged in");
             callback(null);
         }
     });
