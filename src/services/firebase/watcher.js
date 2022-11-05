@@ -1,5 +1,6 @@
 import { auth, db } from "./setup";
 import { collection, query, onSnapshot } from "firebase/firestore";
+import moment from "moment";
 
 export function watchUserChanges(callback) {
     const unsub = auth.onAuthStateChanged((user) => {
@@ -26,8 +27,10 @@ export function watchMaintenance(callback) {
             const data = doc.data();
             maintenances.push({
                 ...data,
+                // date: moment().format("DD MMM YYYY hh:mm a"),
                 id: doc.id,
             });
+            // console.log("esto es lo q obtenemos del watcher", maintenances)
         })
         callback(maintenances);
         // console.log("current maintenances", maintenances);

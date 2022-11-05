@@ -9,7 +9,7 @@ useEffect(() => {
 }, []);
 
   return (
-    <div id="firebaseui">login</div>
+    <div id="firebaseui"></div>
   )
 }
 

@@ -14,8 +14,10 @@ const initialStateMtto = {
   const Dashboard = () => {
   const [stateMtto, setStateMtto] = useState(initialStateMtto);
   const { maintenanceId, isOpen } = stateMtto;
-  const stateMaintenance = useContext(MaintenanceContext);
-  const {maintenances} = stateMaintenance;
+
+  const stateMaintenance = useContext
+  (MaintenanceContext);
+  const { maintenances } = stateMaintenance;
 
   const mtto = maintenances.find(n => n.id === maintenanceId);
 
@@ -52,7 +54,7 @@ const initialStateMtto = {
                   }
                 >
                   <td>{row.id}</td>
-                  <td>{moment(row.date).format("DD MMM YYYY hh:mm a")}</td>
+                  <td>{row.date}</td>
                   <td>{row.equipment}</td>
                   <td>{row.author}</td>
                   <td>{row.activity}</td>

@@ -8,6 +8,7 @@ import TextField from "../../components/textField/textField";
 import Select from "../../components/select/select";
 import FormControl from "../../components/formControl/formControl";
 import { createMaintenance, deleteMaintenance, updateMaintenance} from '../../services/firebase';
+import moment from "moment";
 
 const formSchema = yup.object().shape({
     equipment: yup.string().min(1).required(),
@@ -45,6 +46,7 @@ const Maintenance = ({ mtto, onClose }) => {
             equipment: mtto.equipment || '',
             author: mtto.author || '',
             activity: mtto.activity || '',
+            date: moment().format("DD MMM YYYY hh:mm a") || '',
           }}
           validationSchema={formSchema}
           onSubmit={onSubmit}
@@ -58,6 +60,8 @@ const Maintenance = ({ mtto, onClose }) => {
               isValid,
             } = props;
 
+            console.log("que es values", values)
+
             return (
             <>
                 <FormControl type='row'>
@@ -68,12 +72,12 @@ const Maintenance = ({ mtto, onClose }) => {
                         placeholder="equipo"
                         options={[
                           {
-                            label: "cortadora",
-                            value: "cortadora",
+                            label: "cutter",
+                            value: "cutter",
                           },
                           {
-                            label: "extendedora",
-                            value: "extendedora",
+                            label: "spreader",
+                            value: "spreader",
                           },
                           {
                             label: "plotter",

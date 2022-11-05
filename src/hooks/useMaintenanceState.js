@@ -20,6 +20,7 @@ const useMaintenanceState = () => {
                 })
             }
         })
+        watchUserChanges();
     }, []) 
     return stateMaintenance;
 }
