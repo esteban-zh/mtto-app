@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
 import {
     XYPlot,
-    DiscreteColorLegend,
     VerticalGridLines,
     HorizontalGridLines,
     XAxis,

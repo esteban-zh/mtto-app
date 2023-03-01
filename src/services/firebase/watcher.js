@@ -1,6 +1,5 @@
 import { auth, db } from "./setup";
 import { collection, query, onSnapshot } from "firebase/firestore";
-import moment from "moment";
 
 export function watchUserChanges(callback) {
     const unsub = auth.onAuthStateChanged((user) => {
