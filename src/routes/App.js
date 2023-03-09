@@ -17,7 +17,7 @@ const App = () => {
             <AuthContext.Provider value={auth}>
                 <BrowserRouter>
                     <Routes>
-                        <Route path="/login" element={<Login/>} />
+                        <Route path="/" element={<Login/>} />
                         <Route path="/dashboard" element={<SecurityRoute/>}/>
                         <Route path='/reports' element={<Reports/>}/>
                     </Routes>
