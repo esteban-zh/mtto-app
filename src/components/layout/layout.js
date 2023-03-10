@@ -11,7 +11,7 @@ const Layout = ({children}) => {
         <nav>
             <ul>
                 <li><Link to="/reports">Reporters</Link></li>
-                <li><Link to="/login">log out</Link></li>
+                <li><Link to="/">log out</Link></li>
             </ul>
         </nav>
         </div>
