@@ -7,7 +7,7 @@ const Root = () => {
     const stateAuth = useContext(AuthContext);
   const { isLoggedIn } = stateAuth;
 
-  return isLoggedIn ? <Dashboard /> : <Navigate to="/login" />;
+  return isLoggedIn ? <Dashboard /> : <Navigate to="/" />;
 }
 
 export default Root
